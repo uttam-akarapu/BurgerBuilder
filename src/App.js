@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Layout from "./components/Layout/Layout";
+import BurgerBuilder from "./contianers/BurgerBuilder/BurgerBuilder";
+import Burger from "./components/Burger/Burger";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  
+
+  render() {
+    return (
+      <div className="container">
+          <Layout>
+            <p>Hello Testing</p>
+            <p><button className="btn btn-primary" >Click</button></p>
+            <BurgerBuilder/>
+           
+            </Layout>
+      </div>
+    );
+  }
 }
+
+App.propTypes = {
+
+};
 
 export default App;
