@@ -14,12 +14,23 @@ const controls=[
 const BuildControls = (props) => {
     return (
         <div className={Styles.BuildControls}>
+            <h3>Current Price : {props.price}/-</h3>
             {controls.map(control=>(
-               <BuildControl key={control.label} label={control.label} />
+               <BuildControl 
+               key={control.label} 
+               label={control.label} 
+               added = {()=>props.ingredientAdded(control.type)}
+               removed = {() => props.ingredientsRemoved(control.type)}
+                      
+               />
                )
             )
             }
-            
+            <button 
+            className={Styles.OrderButton}
+            disabled = {!props.purchasable}
+            onClick={props.purchaseHandler}
+            >ORDER NOW !</button>
         </div>
     );
 };
