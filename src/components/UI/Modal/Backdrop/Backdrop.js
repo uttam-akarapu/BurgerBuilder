@@ -4,7 +4,7 @@ import Styles from "../Backdrop/Backdrop.module.css";
 
 const Backdrop = (props) => {
     return (
-    props.show ? <div className={Styles.backdrop1}  onClick={props.clicked}></div> : null
+    props.show ? <div className={Styles.backdrop}  onClick={props.clicked}></div> : null
     );
     
 };

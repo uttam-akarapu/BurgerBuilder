@@ -104,6 +104,11 @@ class BurgerBuilder extends Component {
         })
     }
 
+    purchaseContinue = ()=>{
+        alert("You can Continue !!");
+
+    }
+
     render() {
         const {ingredients} = this.state;
         return (
@@ -118,7 +123,11 @@ class BurgerBuilder extends Component {
                 />
 
             <Modal show={this.state.purchasing} modalClosed ={this.modalClosed}>
-            <OrderSummary ingredients={this.state.ingredients}/>
+            <OrderSummary 
+            ingredients={this.state.ingredients} 
+            cancelled ={this.modalClosed}
+            continue = {this.purchaseContinue}
+            />
             </Modal>
 
             </Aux>
